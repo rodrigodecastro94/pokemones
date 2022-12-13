@@ -1,0 +1,11 @@
+.searchbar input {
+    margin: auto;
+    width: 85vw;
+    height: 20px;
+    border: thin solid #e0e0e0;
+    border-radius: 9px;
+    padding-left: 10px;
+  }
+  .searchbar{
+    text-align: center;
+  }
