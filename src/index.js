@@ -5,15 +5,8 @@ import App from "./App";
 import Detalles from "./Componentes/Detalles";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const router = createBrowserRouter([
-  // <Router>
-  //   <Switch>
-  //     <Route exact path="/" component={App} />
-  //     <Route path="pokemon/:idPokemon" component={Details} />
-  //   </Switch>
-  // </Router>,
   {
     path: "/",
     element: <App />,
@@ -26,10 +19,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    
     <RouterProvider router={router} />
-   
-    
   </React.StrictMode>
 );
 

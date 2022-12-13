@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Searchbar from "./Searchbar";
 import { Link } from "react-router-dom";
+
 function Listado(props) {
   const [listOriginal, setListOriginal] = useState();
   const [listado, setListado] = useState();
@@ -41,7 +42,6 @@ function Listado(props) {
     }
     console.log(nuevoListado);
     setListado(nuevoListado);
-    //setListOriginal(nuevoListado);
   }
 
   function filtrarListado(e) {
