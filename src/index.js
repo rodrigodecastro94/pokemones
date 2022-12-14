@@ -1,13 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import Detalles from "./Componentes/Detalles";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  // <Router>
+  //   <Switch>
+  //     <Route exact path="/" component={App} />
+  //     <Route path="pokemon/:idPokemon" component={Details} />
+  //   </Switch>
+  // </Router>,
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "pokemon/:idPokemon",
+    element: <Detalles />,
+  },
+]);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    
+    <RouterProvider router={router} />
+   
+    
   </React.StrictMode>
 );
 

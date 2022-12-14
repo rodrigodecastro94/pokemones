@@ -1,0 +1,161 @@
+.details-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #74cb48;
+    border-radius: 15px;
+    font-size: 12px;
+  }
+  
+  h3 {
+    color: #74cb48;
+  }
+  
+  /* --------------------  HEADER  ---------------- */
+  
+  .details-header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  
+  .arrow-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    cursor: pointer;
+  }
+  
+  .arrow-name h2 {
+    font-size: 24px;
+    margin-left: 0.8rem;
+  }
+  
+  .arrows {
+    cursor: pointer;
+  }
+  
+  /* ---------------------IMAGEN---------------------- */
+  
+  .img-floating {
+    position: absolute;
+    width: 100%;
+    top: 4.5rem;
+  }
+  
+  .pokemon-photo {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* ------------------SECTION DETAILS----------------- */
+  
+  .pokemon-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 98%;
+    height: 60%;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 150px;
+    margin-bottom: 0.3rem;
+    padding-top: 4rem;
+  }
+  
+  /* -----------------ABOUT ----------------- */
+  .about-title {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+  
+  .about-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+  }
+  
+  .about-data p {
+    font-size: 10px;
+    color: #666666;
+    margin-top: 0;
+  }
+  
+  .about-scales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+  }
+  
+  .scales {
+    display: flex;
+  }
+  
+  .scales h5 {
+    margin-left: 0.5rem;
+    font-weight: 300;
+  }
+  
+  .about-moves {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+  }
+  
+  .about-moves h5 {
+    font-weight: 300;
+  }
+  
+  .about-description {
+    margin: 0.5rem 1rem;
+    font-size: 11px;
+  }
+  
+  /* -----------------BASE STATS ----------------- */
+  
+  .base-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .stats-title {
+    font-size: 15px;
+    margin: 0.5rem;
+  }
+  
+  .base-stats ul {
+    list-style: none;
+    text-align: right;
+    padding-left: 0;
+  }
+  
+  .stats-number {
+    margin-left: 2rem;
+  }
+  
+  .stats-bars {
+    margin-left: 1rem;
+    font-size: 10px;
+    font-weight: 700;
+  }

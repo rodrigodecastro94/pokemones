@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    height: 10vw;
+    padding: 2.5rem 2rem 1rem 2rem;
+  }
+  
+  .header img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .logo-title {
+    display: flex;
+  }
+  
+  .logo-title h1 {
+    margin: 0;
+    padding-left: 3%;
+  }
