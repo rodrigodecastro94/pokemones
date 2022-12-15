@@ -9,7 +9,7 @@ function Listado(props) {
   const [listado, setListado] = useState();
   const [isNumericSorted, setIsNumericSorted] = useState(true);
   const getData = () => {
-    fetch("http://localhost:5000/pokemons", {
+    fetch("http://localhost:3000/pokemons", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -29,6 +29,8 @@ function Listado(props) {
     getData();
   }, []);
 
+  // ORDENAR POKEMONES NUMERICAMENTE Y ALFABETICAMENTE
+
   function ordenarListado() {
     let nuevoListado = [...listado];
     if (isNumericSorted === true) {
@@ -43,6 +45,8 @@ function Listado(props) {
     console.log(nuevoListado);
     setListado(nuevoListado);
   }
+
+  // BUSCAR POKEMONES
 
   function filtrarListado(e) {
     let value = e.target.value.trim();
@@ -64,12 +68,13 @@ function Listado(props) {
     } else {
       setListado(listOriginal);
     }
-    // revisar parametros
   }
   return (
     <div>
       <Header ordenar={ordenarListado} sorted={isNumericSorted} />
       <Searchbar filtrar={filtrarListado} />
+
+      {/* CARDS DE POKEMONES */}
       <section className="main">
         {listado?.map(function (array, index) {
           return (

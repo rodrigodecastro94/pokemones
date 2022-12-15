@@ -8,7 +8,7 @@ function Header(props) {
         <h1>Pokédex</h1>
       </div>
 
-      <div onClick={props.ordenar}>
+      <div onClick={props.ordenar} className="ordenar-iconos">
         {props.sorted ? (
           <img src="/img/downHastag.png" alt="downArrow" />
         ) : (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import "./Detalles.css";
 import { useEffect } from "react";
@@ -8,25 +8,33 @@ function Detalles(props) {
   const { idPokemon } = useParams();
   const [pokemon, setPokemon] = useState("");
   const [pokemonTotal, setPokemonTotal] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/pokemons/" + idPokemon, {
+    fetch("http://localhost:3000/pokemons/" + idPokemon, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
     })
       .then(function (response) {
-        return response.json();
+        if (response.ok) {
+          return response.json();
+        }
+        return Promise.reject(response);
       })
 
       .then(function (myJson) {
         setPokemon(myJson);
+      })
+
+      .catch((error) => {
+        navigate("/error");
       });
   }, [idPokemon]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/pokemons/", {
+    fetch("http://localhost:3000/pokemons/", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

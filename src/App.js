@@ -1,11 +1,10 @@
+import "./App.css";
+import Listado from "./Componentes/Listado";
 
-import './App.css';
-import Listado from './Componentes/Listado';
-//import Detalles from './Componentes/Detalles';
 function App() {
   return (
     <div>
-      <Listado/>
+      <Listado />
     </div>
   );
 }
