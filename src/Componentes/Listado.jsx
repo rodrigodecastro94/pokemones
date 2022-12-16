@@ -9,7 +9,7 @@ function Listado(props) {
   const [listado, setListado] = useState();
   const [isNumericSorted, setIsNumericSorted] = useState(true);
   const getData = () => {
-    fetch("http://localhost:5000/pokemons", {
+    fetch("http://localhost:3000/pokemons", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

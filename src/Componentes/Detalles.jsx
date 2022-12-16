@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import "./Detalles.css";
 import { useEffect } from "react";
@@ -8,16 +8,17 @@ function Detalles(props) {
   const { idPokemon } = useParams();
   const [pokemon, setPokemon] = useState("");
   const [pokemonTotal, setPokemonTotal] = useState(0);
-
+const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/pokemons/" + idPokemon, {
+    fetch("http://localhost:3000/pokemons/" + idPokemon, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
     })
       .then(function (response) {
-        return response.json();
+
+        
       })
 
       .then(function (myJson) {
@@ -26,7 +27,7 @@ function Detalles(props) {
   }, [idPokemon]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/pokemons/", {
+    fetch("http://localhost:3000/pokemons/", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -42,7 +43,7 @@ function Detalles(props) {
   }, [idPokemon]);
 
   return (
-    <div className="details-card" style={{ backgroundColor: pokemon.color1 }}>
+    <div className="details-card" style={{ backgroundColor: pokemon?.color1 }}>
       {/* HEADER */}
       <div className="details-header">
         <div className="arrow-name">
@@ -62,7 +63,7 @@ function Detalles(props) {
         <div className="pokemon-photo">
           <Link
             to={`/pokemon/${
-              pokemon.id - 1 === 0 ? pokemonTotal : pokemon.id - 1
+              pokemon?.id - 1 === 0 ? pokemonTotal : pokemon?.id - 1
             }`}
           >
             <img
@@ -76,7 +77,7 @@ function Detalles(props) {
           <img src={pokemon?.imagen} alt="pokemon" />
           <Link
             to={`/pokemon/${
-              pokemon.id + 1 === pokemonTotal + 1 ? 1 : pokemon.id + 1
+              pokemon?.id + 1 === pokemonTotal + 1 ? 1 : pokemon?.id + 1
             }`}
           >
             <img
@@ -94,17 +95,17 @@ function Detalles(props) {
       <section className="pokemon-details">
         {/* POKEMON TYPE */}
         <div className="pokemon-type">
-          <div style={{ backgroundColor: pokemon.color1 }}>
+          <div style={{ backgroundColor: pokemon?.color1 }}>
             {pokemon?.types?.type1}
           </div>
-          <div style={{ backgroundColor: pokemon.color2 }}>
+          <div style={{ backgroundColor: pokemon?.color2 }}>
             {pokemon?.types?.type2}
           </div>
         </div>
 
         {/* ABOUT */}
         <article className="about">
-          <h3 className="about-title" style={{ color: pokemon.color1 }}>
+          <h3 className="about-title" style={{ color: pokemon?.color1 }}>
             About
           </h3>
 
@@ -134,12 +135,12 @@ function Detalles(props) {
 
         {/* BASE STATS */}
         <div className="base-stats">
-          <h3 className="stats-title" style={{ color: pokemon.color1 }}>
+          <h3 className="stats-title" style={{ color: pokemon?.color1 }}>
             Base Stats
           </h3>
           <div>
             <ul>
-              <li className="stats-item" style={{ color: pokemon.color1 }}>
+              <li className="stats-item" style={{ color: pokemon?.color1 }}>
                 HP <span className="stats-number">{pokemon?.stats?.hp}</span>
                 <span>
                   <input
@@ -151,7 +152,7 @@ function Detalles(props) {
                   />
                 </span>
               </li>
-              <li className="stats-item" style={{ color: pokemon.color1 }}>
+              <li className="stats-item" style={{ color: pokemon?.color1 }}>
                 ATK <span className="stats-number">{pokemon?.stats?.atk}</span>
                 <span>
                   <input
@@ -163,7 +164,7 @@ function Detalles(props) {
                   />
                 </span>
               </li>
-              <li className="stats-item" style={{ color: pokemon.color1 }}>
+              <li className="stats-item" style={{ color: pokemon?.color1 }}>
                 DEF <span className="stats-number">{pokemon?.stats?.def}</span>
                 <span>
                   <input
@@ -175,7 +176,7 @@ function Detalles(props) {
                   />
                 </span>
               </li>
-              <li className="stats-item" style={{ color: pokemon.color1 }}>
+              <li className="stats-item" style={{ color: pokemon?.color1 }}>
                 SATK
                 <span className="stats-number">{pokemon?.stats?.satk}</span>
                 <span>
@@ -188,7 +189,7 @@ function Detalles(props) {
                   />
                 </span>
               </li>
-              <li className="stats-item" style={{ color: pokemon.color1 }}>
+              <li className="stats-item" style={{ color: pokemon?.color1 }}>
                 SDEF
                 <span className="stats-number">{pokemon?.stats?.sdef}</span>
                 <span>
@@ -201,7 +202,7 @@ function Detalles(props) {
                   />
                 </span>
               </li>
-              <li className="stats-item" style={{ color: pokemon.color1 }}>
+              <li className="stats-item" style={{ color: pokemon?.color1 }}>
                 SPD <span className="stats-number">{pokemon?.stats?.spd}</span>
                 <span>
                   <input

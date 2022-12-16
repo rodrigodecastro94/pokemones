@@ -6,14 +6,18 @@ import Detalles from "./Componentes/Detalles";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+   // errorElement: <ErrorPage />,
+
   },
   {
     path: "pokemon/:idPokemon",
     element: <Detalles />,
+    //errorElement: <ErrorPage />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
